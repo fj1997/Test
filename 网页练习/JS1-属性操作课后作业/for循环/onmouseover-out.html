@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<meta charset='utf-8'>
+<head>
+	<title></title>
+	<style type="text/css">
+	ul{
+		margin-top: 200px ;
+		margin-left: 400px;
+
+	}
+	li{
+		list-style: none;
+		display: inline-block;
+		margin: 30px;
+		position: relative;
+
+	}
+	.div1{
+		width:40px;
+		height: 40px;
+		border: 2px solid #333;
+		display: none;
+		position: absolute;
+		top:-20px;
+		left: 20px;
+	}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oUl=document.getElementById('oul');
+		var aLi=oUl.getElementsByTagName('li');
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].onmouseover=function(){
+				this.getElementsByTagName('div')[0].style.display = 'block';
+			}
+			aLi[i].onmouseout=function(){
+				this.getElementsByTagName('div')[0].style.display ='none';
+
+
+			}
+		}
+
+
+
+	}
+
+
+	</script>
+</head>
+<body>
+<ul id='oul'>
+	
+	<li>
+		<img src="img/1.jpg">
+		<div class="div1">div1
+	    </div>
+	</li>
+	<li>
+		<img src="img/1.jpg">
+		<div class="div1">div2
+	    </div>
+	</li>
+	<li>
+		<img src="img/1.jpg">
+		<div class="div1">div3
+	    </div>
+	</li>
+	<li>
+		<img src="img/1.jpg">
+		<div class="div1">div4
+	    </div>
+	</li>
+		<br>
+	
+	<li>
+		<img src="img/1.jpg">
+
+		<div class="div1">div5
+	    </div>
+	</li>
+	<li>
+		<img src="img/1.jpg">
+		<div class="div1">div6
+	    </div>
+	</li>
+	<li>
+		<img src="img/1.jpg">
+		<div class="div1">div7
+	    </div>
+	</li>
+	<li>
+	    <img src="img/1.jpg">
+	    <div class="div1">div8
+	    </div>
+	</li>
+		
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title></title>
+	<style type="text/css">
+	#box{
+		width: 238px;
+		height: 420px;
+		border: 3px #07060b solid;
+		margin: auto;
+		position: relative;
+	}
+	#talk{
+		height: 370px;
+		overflow:auto;
+		overflow: scroll;
+	}
+	
+	#talk p {
+			margin: 2px;
+		}
+		#talk span {
+			font-size: 14px;
+			display: inline-block;
+			padding: 5px;
+			border: 1px solid gray;
+			border-radius: 5px;
+			margin: 3px;
+			max-width: 160px;
+			vertical-align: top;
+			word-wrap: break-word;
+		}
+		#talk img {
+			height: 24px;
+			width: 24px;
+			border: 1px solid gray;
+			border-radius: 5px;
+			padding: 2px;
+			margin: 3px;
+			vertical-align: top;
+		}
+	img{
+		width: 20px;
+	}
+	#write{
+		height: 48px;
+
+	}
+
+	#send{
+		font-size: 16px;
+		font-family: "黑体";
+		color:#a0a09e;
+		display: inline;
+		vertical-align: middle;
+	}
+	#text{
+		width:132px; 
+		height:25px;
+		font-size: 12px;
+		vertical-align: middle;
+	}
+	</style>
+	<script type="text/javascript">
+	window.onload=function  () {
+		var oImg=document.getElementById("img1");
+		var oText=document.getElementById("text");
+		var oSend=document.getElementById("send");
+		var oTalk=document.getElementById("talk");
+		var arrUrl=["images/6.gif", "images/5.gif" ];
+		var onOff=true;
+		oImg.onclick=function(){
+			if(onOff){
+				oImg.src=arrUrl[1];
+				onOff=false;
+			}
+			else{
+				oImg.src=arrUrl[0];
+				onOff=true;
+			}
+		};
+		
+		oSend.onclick=function(){
+			if (oText.value == '') {
+					alert('好歹写点什么吧，哥们!');
+				} else if (onOff) {
+					oTalk.innerHTML= '<p style="text-align: right"><span style="background: #eee">' + oText.value + '</span>' +'<img src="'+ oImg.src +'" />'  +'</p>'+ oTalk.innerHTML;
+				oText.value="";
+					
+				
+			}
+			else {
+				
+				
+	oTalk.innerHTML= '<p style="text-align: left">'+'<img src="'+ oImg.src +'" />'+'<span style="background: #36ff07">' + oText.value + '</span></p>'+oTalk.innerHTML;
+				oText.value="";
+				
+			}
+
+		};
+	};
+
+	</script>
+</head>
+<body>
+<div id="box">
+	<div id="talk"></div>
+	<div id="write">
+		<img id="img1" src="images/6.gif">
+		<input id="text" type="text" placeholder="选头像、输文字、点发送">
+		<a  id="send" href="javascript:">发送</a>
+	</div>
+</div>
+</body>
+</html>
